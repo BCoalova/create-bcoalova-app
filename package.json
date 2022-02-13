@@ -1,7 +1,7 @@
 {
     "name": "create-boris-app",
-    "version": "1.0.01",
-    "description": "",
+    "version": "1.0.02",
+    "description": "Creates a ready to use React app with webpack, babel, eslint, airbnb, prettier, material, file structure, routes, custom hooks and material ui",
     "main": "index.js",
     "scripts": {
         "start": "webpack-dev-server --mode=development --open --hot",

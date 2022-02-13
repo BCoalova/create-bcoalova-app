@@ -14,11 +14,6 @@ const scripts = `"start": "webpack-dev-server --mode=development --open --hot",
 "lint": "eslint src/ --fix",
 "prepare": "husky install"`
 
-// const babel = `"babel": ${JSON.stringify(packageJson.babel)}`
-
-console.log('packageJson => ', packageJson)
-console.log('packageJson.babel => ', packageJson.babel)
-
 const getDeps = deps =>
     Object.entries(deps)
         .map(dep => `${dep[0]}@${dep[1]}`)
@@ -29,6 +24,8 @@ const getDeps = deps =>
         .replace(/fs-extra[^\s]+/g, '')
 
 console.log('Initializing project..')
+
+console.log('hola')
 
 // create folder and initialize npm
 exec(
@@ -53,11 +50,19 @@ exec(
         })
 
         const filesToCopy = ['webpack.config.js']
-
+        console.log(filesToCopy)
         for (let i = 0; i < filesToCopy.length; i += 1) {
             fs.createReadStream(
                 path.join(__dirname, `../${filesToCopy[i]}`)
             ).pipe(fs.createWriteStream(`${process.argv[2]}/${filesToCopy[i]}`))
+        }
+
+        const babelConfig = ['.babelrc']
+        for (let i = 0; i < babelConfig.length; i += 1) {
+            console.log('babelConfig from loop =>', babelConfig)
+            fs.createReadStream(
+                path.join(__dirname, `../${babelConfig[i]}`)
+            ).pipe(fs.createWriteStream(`${process.argv[2]}/${babelConfig[i]}`))
         }
 
         // npm will remove the .gitignore file when the package is installed, therefore it cannot be copied, locally and needs to be downloaded. Use your raw .gitignore once you pushed your code to GitHub.
