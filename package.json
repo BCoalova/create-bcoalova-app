@@ -1,6 +1,6 @@
 {
     "name": "create-boris-app",
-    "version": "1.0.0",
+    "version": "1.0.01",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -65,7 +65,6 @@
         ]
     },
     "bin": {
-        "create-material-app": "./bin/start.js",
-        "create-material-test": "./bin/test.js"
+        "create-material-app": "./bin/start.js"
     }
 }
