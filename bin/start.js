@@ -25,8 +25,6 @@ const getDeps = deps =>
 
 console.log('Initializing project..')
 
-console.log('hola')
-
 // create folder and initialize npm
 exec(
     `mkdir ${process.argv[2]} && cd ${process.argv[2]} && npm init -y`,
@@ -50,7 +48,6 @@ exec(
         })
 
         const filesToCopy = ['webpack.config.js']
-        console.log(filesToCopy)
         for (let i = 0; i < filesToCopy.length; i += 1) {
             fs.createReadStream(
                 path.join(__dirname, `../${filesToCopy[i]}`)
@@ -59,7 +56,6 @@ exec(
 
         const babelConfig = ['.babelrc']
         for (let i = 0; i < babelConfig.length; i += 1) {
-            console.log('babelConfig from loop =>', babelConfig)
             fs.createReadStream(
                 path.join(__dirname, `../${babelConfig[i]}`)
             ).pipe(fs.createWriteStream(`${process.argv[2]}/${babelConfig[i]}`))
