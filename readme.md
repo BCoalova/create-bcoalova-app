@@ -1,15 +1,30 @@
-# BASE
+# Similar to create-react-app
 
-## REACT
+### Includes and installs:
 
-## BABEL
+-   React and React Dom
+-   React Router Dom
+-   Webpack
+-   Babel
+-   Eslint
+-   Airbnb
+-   Prettier
+-   Husky
+-   Material UI
+-   Basic folder structure
+-   Context
+-   Custom hooks
+-   Generic components (layout and nav)
+-   404 handling
+-   SCSS
+-   Material themeing
 
-## WEBPACK
+## Usage
 
-## ESLINT - AIRBNB
+Run in terminal
 
-## PRETTIER
+    npx create-boris-app <YOUR APP NAME>
 
-## HUSKY
+    cd <YOUR APP NAME>
 
-## TEMPLATE
+    npm start
