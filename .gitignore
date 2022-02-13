@@ -1,0 +1,14 @@
+node_modules
+build
+.env
+env
+.env.production
+env.production
+.env.test
+env.test
+.env.development
+env.development
+.package-lock.json
+package-lock.json
+.eslintcache
+eslintcache

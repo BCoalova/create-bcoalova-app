@@ -1,0 +1,15 @@
+# BASE
+
+## REACT
+
+## BABEL
+
+## WEBPACK
+
+## ESLINT - AIRBNB
+
+## PRETTIER
+
+## HUSKY
+
+## TEMPLATE
