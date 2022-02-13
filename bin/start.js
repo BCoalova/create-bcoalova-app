@@ -60,10 +60,32 @@ exec(
                 path.join(__dirname, `../${babelConfig[i]}`)
             ).pipe(fs.createWriteStream(`${process.argv[2]}/${babelConfig[i]}`))
         }
+        const envFile = ['.env']
+        for (let i = 0; i < envFile.length; i += 1) {
+            fs.createReadStream(path.join(__dirname, `../${envFile[i]}`)).pipe(
+                fs.createWriteStream(`${process.argv[2]}/${envFile[i]}`)
+            )
+        }
+        const esLintRcFile = ['.eslintrc']
+        for (let i = 0; i < esLintRcFile.length; i += 1) {
+            fs.createReadStream(
+                path.join(__dirname, `../${esLintRcFile[i]}`)
+            ).pipe(
+                fs.createWriteStream(`${process.argv[2]}/${esLintRcFile[i]}`)
+            )
+        }
+        const prettierRcFile = ['.prettierrc']
+        for (let i = 0; i < prettierRcFile.length; i += 1) {
+            fs.createReadStream(
+                path.join(__dirname, `../${prettierRcFile[i]}`)
+            ).pipe(
+                fs.createWriteStream(`${process.argv[2]}/${prettierRcFile[i]}`)
+            )
+        }
 
         // npm will remove the .gitignore file when the package is installed, therefore it cannot be copied, locally and needs to be downloaded. Use your raw .gitignore once you pushed your code to GitHub.
         https.get(
-            'https://raw.githubusercontent.com/BCoalova/base-react-babel-airbnb-material-template/master/.gitignore',
+            'https://raw.githubusercontent.com/BCoalova/create-bcoalova-app/master/.gitignore',
             res => {
                 res.setEncoding('utf8')
                 let body = ''

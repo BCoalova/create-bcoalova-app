@@ -28,3 +28,9 @@ Run in terminal
     cd <YOUR APP NAME>
 
     npm start
+
+    npm build
+
+## Autor
+
+[Boris Coalova](https://github.com/BCoalova)
