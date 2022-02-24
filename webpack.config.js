@@ -43,6 +43,14 @@ const config = {
                     },
                 ],
             },
+            {
+                test: /\.(png|jpe?g|gif|jpg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
         ],
     },
     devServer: {
